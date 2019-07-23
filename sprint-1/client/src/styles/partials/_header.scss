@@ -1,2 +1,32 @@
-@import "./colors";
-@import "./fonts";
+// Header Styles
+
+.header-section{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    &__logo{
+
+    }
+    &__search{
+
+        input{}
+        button{}
+    }
+    &__avitar{
+        width: 48px;
+        height:48px;
+        border-radius: 25px;
+        overflow: hidden;
+
+        img{
+            width:auto;
+            height:100%;
+        }
+
+    }
+}
+
+
+
+

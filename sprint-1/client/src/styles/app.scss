@@ -1,5 +1,71 @@
 @import "partials/colors";
 @import "partials/fonts";
 @import "partials/header";
-@import "partials/menu";
 
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Mixins */
+
+/* Maintain consistant container widths */
+@mixin container($width, $max-size, $side-margins){
+    width:$width;
+    max-width: $max-size;
+    margin:0 $side-margins;
+}
+
+
+/* Fonts */
+body{
+    margin:0;
+    color:$main-black;
+    font-family: $regular;
+}
+h1{
+  font-family: $bold;
+  font-size:2.25rem;
+  line-height:2.75rem;  
+}
+.hero-header{
+    font-size:3.75rem;
+    line-height:4.25rem;
+    color:#fff; 
+    @include container(90%, 1440px, auto); 
+}
+h2{
+    font-family: $bold;
+    font-size: 1.5rem;
+    line-height:2rem;
+    margin:0;
+}
+h3{
+    font-family: $demi;
+    font-size:1rem;
+    line-height: 1.5rem;
+}
+h4{
+    font-family:$regular;
+    font-size:.88rem;
+    line-height:1.4rem;
+    font-weight:500;
+}
+.lists{
+        line-height:1.25rem; 
+        margin-right:2em;
+}
+h5{
+    font-family: $demi;
+    font-size:.75rem;
+    line-height: 1.25rem;
+    color:$text-label;
+    text-transform: uppercase;
+}
+
+section{
+    @include container(90%, 1440px, auto);  
+}

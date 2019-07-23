@@ -1,6 +1,7 @@
 import React from 'react'
+import "../styles/partials/comments"
 
-export default function Menu() {
+export default function Comments() {
     return (
         <div>
             

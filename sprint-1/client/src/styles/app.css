@@ -15,37 +15,99 @@
   src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
 }
 
-/* Global Colours */
-/* Brainflix Brand Colours*/
-@font-face {
-  font-family: 'AvenirNextLTPro-Regular';
-  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
+.header-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-@font-face {
-  font-family: 'AvenirNextLTPro-Demi';
-  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
+.header-section__avitar {
+  width: 48px;
+  height: 48px;
+  border-radius: 25px;
+  overflow: hidden;
 }
 
-@font-face {
-  font-family: 'AvenirNextLTPro-Bold';
-  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
+.header-section__avitar img {
+  width: auto;
+  height: 100%;
 }
 
-/* Global Colours */
-/* Brainflix Brand Colours*/
-@font-face {
-  font-family: 'AvenirNextLTPro-Regular';
-  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'AvenirNextLTPro-Demi';
-  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
-@font-face {
-  font-family: 'AvenirNextLTPro-Bold';
-  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
+/* Mixins */
+/* Maintain consistant container widths */
+/* Fonts */
+body {
+  margin: 0;
+  color: #323232;
+  font-family: "AvenirNextLTPro-Regular";
+}
+
+h1 {
+  font-family: "AvenirNextLTPro-Bold";
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+}
+
+.hero-header {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+  color: #fff;
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: "AvenirNextLTPro-Bold";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0;
+}
+
+h3 {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h4 {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: .88rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+}
+
+.lists {
+  line-height: 1.25rem;
+  margin-right: 2em;
+}
+
+h5 {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: .75rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+  text-transform: uppercase;
+}
+
+section {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=app.css.map */
