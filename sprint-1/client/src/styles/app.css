@@ -16,54 +16,67 @@
 }
 
 .header-section {
-  padding: 1em 0;
+  height: 169px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.header-section__right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.header-section__logo {
+  padding: .6em 0;
+}
+
+.header-section__search {
+  max-width: 288px;
 }
 
 .header-section__search input {
   padding: 1.22em;
-  width: 288px;
-  margin: 0;
+  margin: 0 0 .6em 0;
 }
 
 .header-section__search input::-webkit-input-placeholder {
-  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left center;
+  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left top;
+  background-size: contain;
+  text-indent: 1.5rem;
 }
 
 .header-section__search input:-ms-input-placeholder {
-  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left center;
+  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left top;
+  background-size: contain;
+  text-indent: 1.5rem;
 }
 
 .header-section__search input::-ms-input-placeholder {
-  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left center;
+  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left top;
+  background-size: contain;
+  text-indent: 1.5rem;
 }
 
 .header-section__search input::placeholder {
-  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left center;
+  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left top;
+  background-size: contain;
+  text-indent: 1.5rem;
 }
 
 .header-section__search button {
-  margin-left: 1.8em;
+  float: left;
+  width: 224px;
+}
+
+.header-section__search button .btn__icon {
+  vertical-align: top;
+  margin-right: .3rem;
 }
 
 .header-section__avitar {
@@ -71,12 +84,53 @@
   height: 48px;
   border-radius: 25px;
   overflow: hidden;
-  margin-left: 1.5em;
+  margin-left: 1rem;
+  float: right;
 }
 
 .header-section__avitar img {
   width: auto;
   height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .header-section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 80px;
+  }
+  .header-section__right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header-section__search {
+    max-width: none;
+  }
+  .header-section__search input {
+    width: 288px;
+    margin: 0;
+  }
+  .header-section__search button {
+    float: none;
+    width: auto;
+    margin-left: 1.5rem;
+  }
+  .header-section__avitar {
+    float: none;
+    margin-left: 1.5rem;
+  }
 }
 
 html {
@@ -147,8 +201,8 @@ h5 {
 }
 
 section {
-  width: 90%;
-  max-width: 1440px;
+  width: 93.5%;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -206,5 +260,13 @@ input::placeholder {
 
 input:focus, textarea:focus {
   border-color: #0095FF;
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=app.css.map */

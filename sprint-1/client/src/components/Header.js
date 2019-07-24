@@ -6,13 +6,13 @@ import Search from "../assets/icons/SVG/Icon-search.svg"
 
 export default function Header() {
     return (
-        <div>
+        
             <header>
                <section className="header-section">
                     <div className="header-section__logo">
                        <img src={Logo} alt="logo"/>
                    </div>
-                   <aside className="header-section__right">
+                   <div className="header-section__right">
                     <form className="header-section__search">
     <input type="text" name="search" placeholder="Search"/>
                        <button>
@@ -21,10 +21,10 @@ export default function Header() {
                     <div className="header-section__avitar">
                        <img src={Avitar} alt="user-avitar"/>
                    </div>
-                    </aside>
+                    </div>
 
                </section>
             </header> 
-        </div>
+        
     )
 }

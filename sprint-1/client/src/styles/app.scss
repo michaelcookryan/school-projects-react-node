@@ -67,7 +67,7 @@ h5{
 }
 
 section{
-    @include container(90%, 1440px, auto);  
+    @include container(93.5%, 720px, auto);
 }
 
 button{
@@ -101,4 +101,12 @@ input::placeholder{
 }
 input:focus, textarea:focus{
     border-color:$primary-cta-text-link;
+}
+
+
+
+@media screen and(min-width:768px){
+    section{
+        @include container(90%, 1440px, auto);  
+    }
 }

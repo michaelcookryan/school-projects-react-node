@@ -2,10 +2,61 @@
 
 
 .header-section{
-    padding:1em 0;
+    height:169px;
     display: flex;
-    justify-content: space-between;
+    flex-direction:column;
+    justify-content: flex-start;
     align-items: center;
+
+    &__logo{
+        padding: .6em 0;
+    }
+    &__search{
+        max-width:288px;
+
+        input{
+            padding:1.22em;
+            margin:0 0 .6em 0;
+        }
+      
+        input::placeholder {
+                background: url('../assets/icons/SVG/Icon-search.svg') no-repeat left top;
+                background-size:contain;
+                text-indent:1.5rem;
+            }
+        button{
+            float:left;
+            width:224px;
+
+            .btn__icon{
+                vertical-align: top;
+                margin-right:.3rem;
+            }
+        }
+    }
+    &__avitar{
+        width: 48px;
+        height:48px;
+        border-radius: 25px;
+        overflow: hidden;
+        margin-left:1rem;
+        float:right;
+
+        img{
+            width:auto;
+            height:100%;
+        }
+
+    }
+}
+
+
+
+@media screen and (min-width:768px){
+.header-section{
+    flex-direction:row;
+    justify-content: space-between;
+    height:80px;
 
     &__right{
         display: flex;
@@ -16,35 +67,26 @@
 
     }
     &__search{
+        max-width:none;
 
         input{
-            padding:1.22em;
             width:288px;
             margin:0;
         }
       
-        input::placeholder {
-                background: url('../assets/icons/SVG/Icon-search.svg') no-repeat left center;
-            }
         button{
-            margin-left:1.8em
+            float: none;
+            width: auto;
+            margin-left:1.5rem;
         }
     }
     &__avitar{
-        width: 48px;
-        height:48px;
-        border-radius: 25px;
-        overflow: hidden;
-        margin-left:1.5em;
-
-        img{
-            width:auto;
-            height:100%;
-        }
+        float:none;
+        margin-left:1.5rem;
 
     }
+ }
 }
-
 
 
 
