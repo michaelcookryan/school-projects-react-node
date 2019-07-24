@@ -16,14 +16,54 @@
 }
 
 .header-section {
+  padding: 1em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-section__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-section__search input {
+  padding: 1.22em;
+  width: 288px;
+  margin: 0;
+}
+
+.header-section__search input::-webkit-input-placeholder {
+  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left center;
+}
+
+.header-section__search input:-ms-input-placeholder {
+  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left center;
+}
+
+.header-section__search input::-ms-input-placeholder {
+  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left center;
+}
+
+.header-section__search input::placeholder {
+  background: url("../assets/icons/SVG/Icon-search.svg") no-repeat left center;
+}
+
+.header-section__search button {
+  margin-left: 1.8em;
 }
 
 .header-section__avitar {
@@ -31,6 +71,7 @@
   height: 48px;
   border-radius: 25px;
   overflow: hidden;
+  margin-left: 1.5em;
 }
 
 .header-section__avitar img {
@@ -109,5 +150,61 @@ section {
   width: 90%;
   max-width: 1440px;
   margin: 0 auto;
+}
+
+button {
+  text-transform: uppercase;
+  padding: 1.25em;
+  background: #0095FF;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  float: right;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+button:hover {
+  background: #0065AD;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+input, textarea {
+  border: 1px solid #E1E1E1;
+  background: #FAFAFA;
+  border-radius: 4px;
+  outline: none;
+  width: 100%;
+  margin: 0 0 2.2em 0;
+  padding: 1.5em;
+}
+
+textarea,
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+  font-family: "AvenirNextLTPro-Regular";
+}
+
+textarea,
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder {
+  font-family: "AvenirNextLTPro-Regular";
+}
+
+textarea,
+textarea::-ms-input-placeholder,
+input::-ms-input-placeholder {
+  font-family: "AvenirNextLTPro-Regular";
+}
+
+textarea,
+textarea::placeholder,
+input::placeholder {
+  font-family: "AvenirNextLTPro-Regular";
+}
+
+input:focus, textarea:focus {
+  border-color: #0095FF;
 }
 /*# sourceMappingURL=app.css.map */

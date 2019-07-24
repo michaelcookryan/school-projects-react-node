@@ -1,23 +1,41 @@
 // Header Styles
 
+
 .header-section{
+    padding:1em 0;
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
 
+    &__right{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center; 
+    }
     &__logo{
 
     }
     &__search{
 
-        input{}
-        button{}
+        input{
+            padding:1.22em;
+            width:288px;
+            margin:0;
+        }
+      
+        input::placeholder {
+                background: url('../assets/icons/SVG/Icon-search.svg') no-repeat left center;
+            }
+        button{
+            margin-left:1.8em
+        }
     }
     &__avitar{
         width: 48px;
         height:48px;
         border-radius: 25px;
         overflow: hidden;
+        margin-left:1.5em;
 
         img{
             width:auto;
