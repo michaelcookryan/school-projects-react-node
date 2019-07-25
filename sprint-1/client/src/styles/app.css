@@ -133,6 +133,10 @@
   }
 }
 
+.hero-section video {
+  width: 100%;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -182,9 +186,12 @@ h3 {
 
 h4 {
   font-family: "AvenirNextLTPro-Regular";
-  font-size: .88rem;
-  line-height: 1.4rem;
   font-weight: 500;
+}
+
+h4 {
+  font-size: .82rem;
+  line-height: 1.15rem;
 }
 
 .lists {
@@ -263,6 +270,10 @@ input:focus, textarea:focus {
 }
 
 @media screen and (min-width: 768px) {
+  h4 {
+    font-size: .88rem;
+    line-height: 1.4rem;
+  }
   section {
     width: 90%;
     max-width: 1440px;

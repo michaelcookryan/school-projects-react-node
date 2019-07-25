@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from "../assets/logo/Logo-brainflix.svg"
 import Avitar from "../assets/images/Mohan-muruge.jpg"
 import Upload from "../assets/icons/SVG/Icon-upload.svg"
-import Search from "../assets/icons/SVG/Icon-search.svg"
+
 
 export default function Header() {
     return (

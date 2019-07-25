@@ -1,6 +1,7 @@
 @import "partials/colors";
 @import "partials/fonts";
 @import "partials/header";
+@import "partials/hero";
 
 
 html {
@@ -50,10 +51,16 @@ h3{
 }
 h4{
     font-family:$regular;
-    font-size:.88rem;
-    line-height:1.4rem;
+    // font-size:.88rem;
+    // line-height:1.4rem;
     font-weight:500;
 }
+
+    h4{
+        font-size:.82rem;
+        line-height: 1.15rem;
+    }
+
 .lists{
         line-height:1.25rem; 
         margin-right:2em;
@@ -106,6 +113,10 @@ input:focus, textarea:focus{
 
 
 @media screen and(min-width:768px){
+    h4{
+        font-size:.88rem;
+        line-height:1.4rem;
+    }
     section{
         @include container(90%, 1440px, auto);  
     }
