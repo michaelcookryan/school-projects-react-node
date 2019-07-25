@@ -2,6 +2,9 @@
 @import "partials/fonts";
 @import "partials/header";
 @import "partials/hero";
+@import "partials/about";
+@import "partials/comments";
+@import "partials/sidemenu";
 
 
 html {
@@ -79,6 +82,11 @@ h5{
 section{
     @include container(100%, 720px, auto);
 }
+main{
+    @include container(95%, 720px, auto);
+    background:silver;
+    height:50vh;
+}
 button{
     text-transform: uppercase;
     padding:1.25em;
@@ -114,12 +122,13 @@ input:focus, textarea:focus{
 
 
 
+
 @media screen and(min-width:768px){
     h4{
         font-size:.88rem;
         line-height:1.4rem;
     }
-    section{
+    main,section{
         @include container(90%, 1440px, auto);  
     }
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import Video from "../assets/images/video-list-0.jpg"
 import Play from "../assets/icons/SVG/Icon-play.svg"
-import Scrubber from "../assets/icons/SVG/Icon-scrubber-control.svg"
 import FullScreen from "../assets/icons/SVG/Icon-fullscreen.svg"
 import Volume from "../assets/icons/SVG/Icon-volume.svg"
 
@@ -14,7 +13,7 @@ export default function Hero(){
                     <img src={Play} alt="play"/>
                 </div>
                 <div className="control__icons control__scrubber">
-                    <img src={Scrubber} alt="play" />
+                    <hr/><span>0:00/0:42</span>
                 </div>
                 <div className="control__icons control__screen-vol">
                   
