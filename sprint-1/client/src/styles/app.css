@@ -250,6 +250,101 @@
   }
 }
 
+.about {
+  max-width: 712px;
+}
+
+.about__header {
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+.about__header h1 {
+  margin: 0 0 1rem 0;
+}
+
+.about__header .about__subtitle--left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.about__header .about__subtitle--left .author {
+  font-family: "AvenirNextLTPro-Demi";
+}
+
+.about__header .about__subtitle--left .date {
+  color: #AFAFAF;
+  margin: 0 0 0 .61em;
+}
+
+.about__header .about__subtitle--right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.about__header .about__subtitle--right div:first-child {
+  margin-right: 1rem;
+}
+
+.about__header .about__subtitle--right .views,
+.about__header .about__subtitle--right .likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about__header .about__subtitle--right .views img,
+.about__header .about__subtitle--right .likes img {
+  margin-right: .5rem;
+}
+
+.about__body {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.about__body--copy {
+  margin: 0;
+  width: 74%;
+}
+
+@media screen and (min-width: 768px) {
+  .about .about__subtitle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about .about__subtitle--left {
+    margin-bottom: 0;
+  }
+  .about .about__subtitle--right div:first-child {
+    margin-right: 1.5rem;
+  }
+  .about__body {
+    padding: 2.5rem 0;
+  }
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -271,8 +366,9 @@ body {
 
 h1 {
   font-family: "AvenirNextLTPro-Bold";
-  font-size: 2.25rem;
-  line-height: 2.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 2rem;
 }
 
 h2 {
@@ -290,12 +386,9 @@ h3 {
 
 h4 {
   font-family: "AvenirNextLTPro-Regular";
-  font-weight: 500;
-}
-
-h4 {
   font-size: .82rem;
   line-height: 1.15rem;
+  font-weight: 500;
 }
 
 .lists {
@@ -321,8 +414,6 @@ main {
   width: 95%;
   max-width: 720px;
   margin: 0 auto;
-  background: silver;
-  height: 50vh;
 }
 
 button {
@@ -382,6 +473,11 @@ input:focus, textarea:focus {
 }
 
 @media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    margin-top: 3rem;
+  }
   h4 {
     font-size: .88rem;
     line-height: 1.4rem;

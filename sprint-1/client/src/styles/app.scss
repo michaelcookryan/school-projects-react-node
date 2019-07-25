@@ -32,8 +32,9 @@ body{
 }
 h1{
   font-family: $bold;
-  font-size:2.25rem;
-  line-height:2.75rem;  
+  font-size:1.5rem;
+  line-height:2rem;
+  margin-top:2rem;  
 }
 // .hero-header{
 //     font-size:3.75rem;
@@ -54,15 +55,11 @@ h3{
 }
 h4{
     font-family:$regular;
-    // font-size:.88rem;
-    // line-height:1.4rem;
+    font-size:.82rem;
+    line-height: 1.15rem;
     font-weight:500;
 }
 
-    h4{
-        font-size:.82rem;
-        line-height: 1.15rem;
-    }
 
 .lists{
         line-height:1.25rem; 
@@ -84,8 +81,6 @@ section{
 }
 main{
     @include container(95%, 720px, auto);
-    background:silver;
-    height:50vh;
 }
 button{
     text-transform: uppercase;
@@ -124,6 +119,11 @@ input:focus, textarea:focus{
 
 
 @media screen and(min-width:768px){
+    h1{
+        font-size:2.25rem;
+        line-height:2.75rem; 
+        margin-top:3rem; 
+    }
     h4{
         font-size:.88rem;
         line-height:1.4rem;
