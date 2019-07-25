@@ -133,8 +133,86 @@
   }
 }
 
-.hero-section video {
+.hero-section {
+  background: #000;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-section .video {
   width: 100%;
+  max-width: 944px;
+  margin: 0 auto;
+}
+
+.hero-section .control__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  height: 40px;
+  border-radius: 4px;
+}
+
+.hero-section .control {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 0;
+  width: 100%;
+  max-width: 912px;
+  margin: 0 auto 1rem;
+}
+
+.hero-section .control__play {
+  margin-right: 1rem;
+  width: 52px;
+}
+
+.hero-section .control__scrubber {
+  width: 100%;
+  max-width: 519px;
+}
+
+.hero-section .control__screen-vol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80px;
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section .control__scrubber {
+    max-width: 751px;
+  }
 }
 
 html {
@@ -160,15 +238,6 @@ h1 {
   font-family: "AvenirNextLTPro-Bold";
   font-size: 2.25rem;
   line-height: 2.75rem;
-}
-
-.hero-header {
-  font-size: 3.75rem;
-  line-height: 4.25rem;
-  color: #fff;
-  width: 90%;
-  max-width: 1440px;
-  margin: 0 auto;
 }
 
 h2 {
@@ -208,7 +277,7 @@ h5 {
 }
 
 section {
-  width: 93.5%;
+  width: 100%;
   max-width: 720px;
   margin: 0 auto;
 }

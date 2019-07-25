@@ -32,12 +32,12 @@ h1{
   font-size:2.25rem;
   line-height:2.75rem;  
 }
-.hero-header{
-    font-size:3.75rem;
-    line-height:4.25rem;
-    color:#fff; 
-    @include container(90%, 1440px, auto); 
-}
+// .hero-header{
+//     font-size:3.75rem;
+//     line-height:4.25rem;
+//     color:#fff; 
+//     @include container(90%, 1440px, auto); 
+// }
 h2{
     font-family: $bold;
     font-size: 1.5rem;
@@ -73,10 +73,12 @@ h5{
     text-transform: uppercase;
 }
 
+// section{
+//     @include container(93.5%, 720px, auto);
+// }
 section{
-    @include container(93.5%, 720px, auto);
+    @include container(100%, 720px, auto);
 }
-
 button{
     text-transform: uppercase;
     padding:1.25em;
