@@ -11,8 +11,11 @@
     &__logo{
         padding: .6em 0;
     }
+    &__right{
+        width: 100%;
+        padding: 0 1em;
+    }
     &__search{
-        max-width:288px;
 
         input{
             padding:1.22em;
@@ -26,7 +29,7 @@
             }
         button{
             float:left;
-            width:224px;
+            width:calc(100% - 64px);
 
             .btn__icon{
                 vertical-align: top;
@@ -62,12 +65,10 @@
         display: flex;
         justify-content: flex-end;
         align-items: center; 
+        padding:0;
     }
-    // &__logo{
-
-    // }
     &__search{
-        max-width:none;
+
 
         input{
             width:288px;

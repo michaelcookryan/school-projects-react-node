@@ -3,8 +3,7 @@ import "../styles/app.css";
 import Header from './Header';
 import Hero from './Hero';
 import About from './About';
-// import Comments from './Comments';
-import SideMenu from './SideMenu';
+import VideoList from './VideoList';
 
 function App() {
   return (
@@ -13,8 +12,7 @@ function App() {
      <Hero/>
      <main>
         <About/>
-        {/* <Comments/> */}
-        <SideMenu/>
+        <VideoList/>
      </main>
     </div>
   );
