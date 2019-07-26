@@ -3,7 +3,7 @@ import "../styles/app.css";
 import Header from './Header';
 import Hero from './Hero';
 import About from './About';
-import Comments from './Comments';
+// import Comments from './Comments';
 import SideMenu from './SideMenu';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
      <Hero/>
      <main>
         <About/>
-        <Comments/>
+        {/* <Comments/> */}
         <SideMenu/>
      </main>
     </div>

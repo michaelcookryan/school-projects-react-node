@@ -1,6 +1,7 @@
 import React from 'react'
 import Views from "../assets/icons/SVG/Icon-views.svg"
 import Likes from "../assets/icons/SVG/Icon-likes.svg"
+import Comments from './Comments';
 
 export default function About() {
     return (
@@ -28,6 +29,7 @@ export default function About() {
                     On a gusty day in Southern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event veteran Kyle Strait, who won the event for the second time -- eight years after his ﬁrst Red Cow Rampage title
                 </h4>
             </div>
+            <Comments/>
         </div>
     )
 }
