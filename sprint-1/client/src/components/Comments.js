@@ -8,9 +8,11 @@ export default function Comments() {
     return (
         <div className="comments">
             {/* <h1 className="comments__titles">Join the Conversation</h1> */}
-            <div className="comments__wrapper">
-                <div className="comments__wrapper--form-wrap">
-                    <div className="comments__wrapper--image">
+            {/* <div className="comments__wrapper"> */}
+
+            <div className="comments-wrapper__form-wrap">
+
+                    <div className="comments-wrapper__image">
                         <img src={Avitar} /></div>
 
                     <form className="comments__form">
@@ -19,7 +21,7 @@ export default function Comments() {
                         </lable>
                         <input type="text" name="name" required /> */}
 
-                        <lable className="input-lable">
+                        <lable className="comment-label">
                             <h5>Join the conversation</h5>
                         </lable>
                         <textarea placeholder="Add a new comment" name="commentCopy" required></textarea>
@@ -29,7 +31,7 @@ export default function Comments() {
 
                 </div>
                 <ul className="comments__list"></ul>
-            </div>
+            {/* </div> */}
         </div>
     )
 }

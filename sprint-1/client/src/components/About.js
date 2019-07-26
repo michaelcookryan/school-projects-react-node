@@ -10,7 +10,7 @@ export default function About() {
                 <h1 className="about__title">BMX Rampage: 2018 Highlights</h1>
                 <div className="about__subtitle">
                     <div className="about__subtitle--left">
-                        <div className="author">By Red Cow</div>
+                        <h4 className="author">By Red Cow</h4>
                         <h4 className="date">12/18/2018</h4>
                     </div>
                     <div className="about__subtitle--right">

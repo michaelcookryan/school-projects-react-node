@@ -5,26 +5,26 @@
 
 
 
-.comments__wrapper{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 528px;
-    margin: 0 auto;
+//.comments__wrapper{
+    // display:flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // max-width: 528px;
+    // margin: 0 auto;
     
-    &--form-wrap{
+    .comments-wrapper__form-wrap{
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         width:100%;
     }
-    &--image, .avitar {
+    .comments-wrapper__image, .avitar {
         width: 48px;
         height:48px;
         border-radius: 25px;
         overflow: hidden;
-        margin-top:1.5em;
+        margin:1em .4em 0 0;
 
         img, .avitar img{
             width:auto;
@@ -32,43 +32,30 @@
         }
     }
     .comments__form{
-        margin-left:1.25em;
-        width:100%;
-        max-width:460px;
+        width:80%;
+        max-width:616px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        //margin-right: 2.5em;
 
-        .input-lable h5{
-            margin:0 0 .6em 0;
+        .comment-label h5{
+            margin:0;
         }
-        input, textarea{
-            border:1px solid $text-field-border;
-            background:$text-field-bg;
-            border-radius: 4px;
-            outline:none;
-            width:100%;
-            margin:0 0 2.2em 0;
-            padding:1em
-        }
-        textarea, textarea::placeholder{
-            font-family:$regular;
-        }
-        input:focus, textarea:focus{
-            border-color:$main-black;
-        }
-        &--button{
-            text-transform: uppercase;
-            padding:1.5em 4.6em;
-            background:$primary-cta-text-link;
-            color:#fff;
-            border-radius:4px;
-            border:none;
-            float:right;
-            transition: all .2s ease-in-out;
-            
-            &:hover{
-                background:$primary-cta-hover;
-                transition: all .2s ease-in-out;
+        textarea{
+            padding:.48em 1.22em;
+            margin:0;
+
+            &::placeholder{
+                 transform: translateY(40%);
             }
         }
+        &--button{
+            width:100%;
+            margin:1em 0 0;
+            padding:1.25em 4.6em;
+        }
+        
     }
 
     .comments__list{
@@ -138,32 +125,65 @@
     .comments__list li:first-child{
             border-top:1px solid $divider;
         }
-    
-}
-@media screen and (max-width:580px){
-    .comments{
-        width:90%;
-        max-width:none;
-    }
-    .comments__wrapper--image, .comments__wrapper .avitar{
-        min-width:48px;
-    }
-}
-@media screen and (max-width:414px){
-    .comments__titles,
-    .comments__list{
-        margin:1.35em 0 1.7em;
-    }
-    .comments__form--button{
-        width:100%;
-    }
-    .comments__wrapper .comments__list--item .details .delete-comment{
-        width:100px;
-    }
-    .since-posted{
-        display:none;
-    }
-    .comments__wrapper .comments__list--item .details__header{
+   
+        
+@media screen and (min-width:768px){
+     .comments-wrapper__form-wrap{
         justify-content: space-between;
+    } 
+    .comments__form{
+        width:90%;
+        margin:0 2.5em 0 0;
+        
+        textarea{
+            max-width:440px;
+        }
+        &--button{
+            width:160px;
+            align-self: flex-end;
+            margin-top: -40px
+        }
     }
 }
+
+@media screen and (min-width:1440px){
+   
+    .comments__form{
+        max-width:612px;
+
+         textarea{
+            max-width:436px;
+        }
+    }
+}
+
+
+
+
+//@media screen and (max-width:580px){
+    // .comments{
+    //     width:90%;
+    //     max-width:none;
+    // }
+    // .comments__wrapper--image, .comments__wrapper .avitar{
+    //     min-width:48px;
+    // }
+// }
+// @media screen and (max-width:414px){
+    // .comments__titles,
+    // .comments__list{
+    //     margin:1.35em 0 1.7em;
+    // }
+    // .comments__form--button{
+    //     width:100%;
+    // }
+    // .comments__wrapper .comments__list--item .details .delete-comment{
+    //     width:100px;
+    // }
+    // .since-posted{
+    //     display:none;
+    // }
+    // .comments__wrapper .comments__list--item .details__header{
+    //     justify-content: space-between;
+    // }
+//}

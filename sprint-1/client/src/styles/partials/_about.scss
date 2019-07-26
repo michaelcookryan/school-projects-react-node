@@ -14,10 +14,12 @@
         &--left{
             display: flex;
             justify-content: flex-start;
+            align-items: center;
             margin-bottom:2rem;
 
             .author{
                 font-family:$demi;
+                margin:0;
             }
             .date{
                 color:$text-label;
