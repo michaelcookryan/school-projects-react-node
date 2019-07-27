@@ -27,19 +27,20 @@
                 background-size:contain;
                 text-indent:1.5rem;
             }
-        button{
-            float:left;
-            width:calc(100% - 64px);
+       
+    }
+    button{
+            float:none;
+            width:calc(100% - 58px);
 
             .btn__icon{
                 vertical-align: top;
                 margin-right:.3rem;
             }
         }
-    }
     &__avitar{
-        width: 48px;
-        height:48px;
+        width: 42px;
+        height:42px;
         border-radius: 25px;
         overflow: hidden;
         margin-left:1rem;
@@ -69,18 +70,17 @@
     }
     &__search{
 
-
         input{
             width:288px;
             margin:0;
         }
-      
-        button{
-            float: none;
+
+    }
+    button{
+            // float: none;
             width: auto;
             margin-left:1.5rem;
         }
-    }
     &__avitar{
         float:none;
         margin-left:1.5rem;

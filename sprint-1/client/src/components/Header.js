@@ -15,9 +15,11 @@ export default function Header() {
                    <div className="header-section__right">
                     <form className="header-section__search">
     <input type="text" name="search" placeholder="Search"/>
-                       <button>
-                        <img className="btn__icon" src={Upload} alt="upload-icon"/>Upload</button>
-                   </form>
+                       {/* <button>
+                        <img className="btn__icon" src={Upload} alt="upload-icon"/>Upload</button> */}
+                    </form>
+                    <button>
+                        <img className="btn__icon" src={Upload} alt="upload-icon" />Upload</button>
                     <div className="header-section__avitar">
                        <img src={Avitar} alt="user-avitar"/>
                    </div>

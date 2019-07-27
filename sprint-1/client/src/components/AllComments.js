@@ -2,8 +2,6 @@ import React from 'react'
 import Avitar from "../assets/images/Mohan-muruge.jpg";
 
 function AllComments(props){
-
-
     //render(){
         return (
             <div className="comments">
@@ -25,6 +23,8 @@ function AllComments(props){
 }
 
 
+
+//Provides form for new comment and adds to list of comments
 function NewComments(props) {
 
     const handleSubmit = event => {
@@ -53,6 +53,9 @@ function NewComments(props) {
     )
 }
 
+
+
+// Takes current comment list and provides output for display
 function CommentsList(props) {
 
     const commentList = props.comments.map(comment => {
