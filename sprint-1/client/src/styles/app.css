@@ -710,10 +710,14 @@ button {
   transition: all .2s ease-in-out;
 }
 
-button:hover {
+button:active, button:hover, button:visited {
   background: #0065AD;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+}
+
+button:focus {
+  outline: none;
 }
 
 input, textarea {

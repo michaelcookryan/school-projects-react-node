@@ -85,9 +85,15 @@ button{
     float:right;
     transition: all .2s ease-in-out;
     
-    &:hover{
+    &:active,
+    &:hover,
+    &:visited{
         background:$primary-cta-hover;
         transition: all .2s ease-in-out;
+    }
+
+    &:focus{
+        outline:none;
     }
 }
  input, textarea{
