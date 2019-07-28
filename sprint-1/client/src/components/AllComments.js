@@ -66,14 +66,15 @@ function CommentsList(props) {
                         <img src={Avitar} alt="avitar" />
                     </div>
 
-            <div className="details">
+                    <div className="details">
                         <div className="details__header">
                             <h4 className="name">{comment.name}</h4>
                             <h4 className="date">{comment.date}</h4>
                             {/* <h4 className="since-posted">' + timeSincePosted(commentObject.timestamp) + '</h4> */}
                         </div>
-                    </div>
                         <h4 className="comment-copy">{comment.commentCopy}</h4>
+                    </div>
+
                 </li>
     })
 
