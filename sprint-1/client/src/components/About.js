@@ -18,22 +18,26 @@ class About extends React.Component{
             video: '',
             timestamp: '12/18/2018',
             comments: [
+                
                 {
-                    name: 'Theodore Duncan',
-                    date: '11/15/2018',
-                    commentCopy: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s deﬁnitely my favorite ever!'
+                    name: 'Michael Lyons',
+                    date: '12/18/2018',
+                    timestamp: 1545150010000,
+                    commentCopy: 'They BLEW the ROOF off at their last show, once everyone started ﬁguring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.'
                 },
-
+                
                 {
                     name: 'Gary Wong',
                     date: '12/12/2018',
+                    timestamp: 1544631610000,
                     commentCopy: 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'
                 },
 
                 {
-                    name: 'Michael Lyons',
-                    date: '12/18/2018',
-                    commentCopy: 'They BLEW the ROOF off at their last show, once everyone started ﬁguring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.'
+                    name: 'Theodore Duncan',
+                    date: '11/15/2018',
+                    timestamp: 1542298810000,
+                    commentCopy: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s deﬁnitely my favorite ever!'
                 }
             ]
         }

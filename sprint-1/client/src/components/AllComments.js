@@ -30,14 +30,19 @@ function NewComments(props) {
     const handleSubmit = event => {
         event.preventDefault()
 
+        let date = new Date();
+        let readable = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+        let timestamp = Date.now(); 
+
         let newComment = {
             name: "Annonymous",
-            date: "today",
+            date: readable,
+            timestamp:timestamp,
             commentCopy: event.target.commentCopy.value
         }
 
         props.addComment(newComment)
-       
+
         event.target.reset()
 
     }
@@ -60,7 +65,7 @@ function CommentsList(props) {
 
     const commentList = props.comments.map(comment => {
 
-        return <li key={comment.date} className="comments__list--item">
+        return <li key={comment.timestamp} className="comments__list--item">
                     
                     <div className="avitar">
                         <img src={Avitar} alt="avitar" />
@@ -70,7 +75,7 @@ function CommentsList(props) {
                         <div className="details__header">
                             <h4 className="name">{comment.name}</h4>
                             <h4 className="date">{comment.date}</h4>
-                            {/* <h4 className="since-posted">' + timeSincePosted(commentObject.timestamp) + '</h4> */}
+                    <h4 className="since-posted">{timeSincePosted(comment.timestamp)}</h4>
                         </div>
                         <h4 className="comment-copy">{comment.commentCopy}</h4>
                     </div>
@@ -80,6 +85,35 @@ function CommentsList(props) {
 
     return <ul className="comments__list">{commentList}</ul>
 }
+
+
+
+// For Diving Deeper - time since posted calculation 
+function timeSincePosted(timePosted) {
+
+    let current = new Date()
+    let timeSince = Math.floor((current.getTime() - timePosted)) / 1000 //seconds
+
+    switch (true) {
+
+        case timeSince >= 60 && timeSince < 3600:
+            return Math.round(timeSince / 60) + ' minutes ago'
+
+        case timeSince >= 3600 && timeSince < 86400:
+            return Math.round(timeSince / 3600) + ' hours ago';
+
+        case timeSince >= 86400 && timeSince < 2629743:
+            return Math.round(timeSince / 86400) + ' days ago';
+
+        case timeSince >= 2629743:
+            return Math.round(timeSince / 2629743) + ' months ago';            
+        
+        default:
+            return 'Now';
+            
+    }
+}
+
 
 export default AllComments;
 
