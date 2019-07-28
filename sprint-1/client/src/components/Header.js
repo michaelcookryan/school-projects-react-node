@@ -9,21 +9,21 @@ export default function Header() {
         
             <header>
                <section className="header-section">
-                    <div className="header-section__logo">
+                    
+                <div className="header-section__logo">
                        <img src={Logo} alt="logo"/>
-                   </div>
-                   <div className="header-section__right">
+                </div>
+                
+                <div className="header-section__right">
                     <form className="header-section__search">
-    <input type="text" name="search" placeholder="Search"/>
-                       {/* <button>
-                        <img className="btn__icon" src={Upload} alt="upload-icon"/>Upload</button> */}
+                        <input type="text" name="search" placeholder="Search"/>
                     </form>
                     <button>
                         <img className="btn__icon" src={Upload} alt="upload-icon" />Upload</button>
                     <div className="header-section__avitar">
                        <img src={Avitar} alt="user-avitar"/>
                    </div>
-                    </div>
+                </div>
 
                </section>
             </header> 
