@@ -1,6 +1,8 @@
 // Comments Styles
 
-    
+    .comments__counter{
+        font-family: $demi;
+    }
     .comments-wrapper__form-wrap{
         display: flex;
         justify-content: flex-start;
@@ -46,7 +48,7 @@
     .comments__list{
         list-style-type: none;
         padding:0;
-        margin:1.5em 0 2.5em;
+        margin:1.5em 0 0;
 
         .avitar{
             margin:0;

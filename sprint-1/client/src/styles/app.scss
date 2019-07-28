@@ -5,7 +5,7 @@
 @import "partials/about";
 @import "partials/comments";
 @import "partials/sidemenu";
-
+@import "partials/videolist";
 
 html {
     box-sizing: border-box;
@@ -71,6 +71,10 @@ section{
 }
 main{
     @include container(90%, 720px, auto);
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items:flex-start;
 }
 button{
     text-transform: uppercase;
@@ -119,6 +123,6 @@ input:focus, textarea:focus{
         line-height:1.4rem;
     }
     main,section{
-        @include container(90%, 1440px, auto);  
+        @include container(90%, 1080px, auto); 
     }
 }

@@ -2,9 +2,10 @@ import React from 'react'
 import Avitar from "../assets/images/Mohan-muruge.jpg";
 
 function AllComments(props){
-    //render(){
+
         return (
             <div className="comments">
+                <h4 className="comments__counter">{props.comments.length} Comments</h4>
                 <div className="comments-wrapper__form-wrap">
                        
                     <div className="comments-wrapper__image">
@@ -15,11 +16,10 @@ function AllComments(props){
 
                 </div>
 
-            <CommentsList comments={props.comments}/>
+                <CommentsList comments={props.comments}/>
 
             </div>
         )
-    //}
 }
 
 
@@ -60,13 +60,13 @@ function CommentsList(props) {
 
     const commentList = props.comments.map(comment => {
 
-        return <li className="comments__list--item">
+        return <li key={comment.date} className="comments__list--item">
                     
                     <div className="avitar">
                         <img src={Avitar} alt="avitar" />
                     </div>
 
-                    <div className="details">
+            <div className="details">
                         <div className="details__header">
                             <h4 className="name">{comment.name}</h4>
                             <h4 className="date">{comment.date}</h4>

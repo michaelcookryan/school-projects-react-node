@@ -77,7 +77,7 @@ class About extends React.Component{
                 </h4>
             </div>
 
-            <AllComments comments={this.state.mainVideo.comments} addComment={this.addComment}/>
+            <AllComments comments={this.state.mainVideo.comments} addComment={this.addComment} />
 
         </div>
     )

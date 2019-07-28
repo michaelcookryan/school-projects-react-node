@@ -4,10 +4,10 @@ function VideoThumb(props) {
 
         return (
             
-                <li className="video-thumb">
-                    <div className="video-thumb__image">
-                        <img src={props.image} alt="" />
-                    </div>
+            <li key={props.id} className="video-thumb">
+
+                    <img className="video-thumb__image" src={props.image} alt="" />
+                    
                     <div className="video-thumb__copy">
                         <h4 className="video-thumb__copy--title">
                             {props.title}
@@ -16,7 +16,8 @@ function VideoThumb(props) {
                             {props.channelAuthor}
                         </h4>
                     </div>
-                </li> 
+                
+            </li> 
             
         )
     }
