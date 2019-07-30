@@ -1,0 +1,90 @@
+// Video List styles
+
+.next-videos{
+    margin:2.5rem 0 0;
+    max-width:344px;
+
+
+    &__title{
+        margin:0 0 2.5rem 0;
+    }
+    .video-list{
+        list-style-type:none;
+        margin:0;
+        padding:0;
+
+        .video-thumb{
+            display:flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin:0 0 1.5em 0;
+
+            &__image{
+                width:120px;
+                height:70px;
+                border-radius:4px;
+                object-fit:cover;      
+            } 
+
+            &__copy{
+                margin:0 0 0 1em;
+                width:50%;
+                max-width:208px;
+
+                &--title{
+                    font-family: $demi;
+                    margin:0 0 .2rem 0;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                &--channel-author{
+                    margin:0;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width:768px){
+   .next-videos{
+
+
+    &__title{
+       
+    }
+    .video-list{
+
+        .video-thumb{
+
+            &__copy{
+                
+                &--title{
+                    white-space: normal;
+                    overflow: initial;
+                }
+            }
+        }
+
+    }
+} 
+}
+
+@media screen and (min-width:1440px){
+   .next-videos{
+        margin-left:1em;
+
+    &__title{
+
+    }
+    .video-list{
+
+        .video-thumb{
+
+
+        }
+
+    }
+} 
+}
