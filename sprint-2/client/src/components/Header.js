@@ -1,8 +1,8 @@
 import React from 'react'
 import Logo from "../assets/logo/Logo-brainflix.svg"
 import Avitar from "../assets/images/Mohan-muruge.jpg"
-import Upload from "../assets/icons/SVG/Icon-upload.svg"
-
+import UploadIcon from "../assets/icons/SVG/Icon-upload.svg"
+import {Link} from 'react-router-dom';
 
 export default function Header() {
     return (
@@ -11,15 +11,15 @@ export default function Header() {
                <section className="header-section">
                     
                 <div className="header-section__logo">
-                       <img src={Logo} alt="logo"/>
+                       <Link to="/"><img src={Logo} alt="logo"/></Link>
                 </div>
                 
                 <div className="header-section__right">
                     <form className="header-section__search">
                         <input type="text" name="search" placeholder="Search"/>
                     </form>
-                    <button>
-                        <img className="btn__icon" src={Upload} alt="upload-icon" />Upload</button>
+                    <Link to="/upload-video"><button>
+                        <img className="btn__icon" src={UploadIcon} alt="upload-icon" />Upload</button></Link>
                     <div className="header-section__avitar">
                        <img src={Avitar} alt="user-avitar"/>
                    </div>
