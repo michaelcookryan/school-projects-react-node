@@ -12,7 +12,7 @@ function AllComments(props){
                         <img src={Avitar} alt="avitar"/>
                     </div>
 
-                    <NewComments addComment={props.addComment}/>
+                    {/* <NewComments addComment={props.addComment}/> */}
 
                 </div>
 
@@ -64,7 +64,7 @@ function NewComments(props) {
 function CommentsList(props) {
 
     const commentList = props.comments.map(comment => {
-
+console.log(comment.timestamp)
         return <li key={comment.timestamp} className="comments__list--item">
                     
                     <div className="avitar">
@@ -74,10 +74,10 @@ function CommentsList(props) {
                     <div className="details">
                         <div className="details__header">
                             <h4 className="name">{comment.name}</h4>
-                            <h4 className="date">{comment.date}</h4>
+                    <h4 className="date">{()=>{ props.makeDateReadable(comment.date) } }</h4>
                     <h4 className="since-posted">{timeSincePosted(comment.timestamp)}</h4>
                         </div>
-                        <h4 className="comment-copy">{comment.commentCopy}</h4>
+                        <h4 className="comment-copy">{comment.comment}</h4>
                     </div>
 
                 </li>
@@ -85,7 +85,6 @@ function CommentsList(props) {
 
     return <ul className="comments__list">{commentList}</ul>
 }
-
 
 
 // For Diving Deeper - time since posted calculation 

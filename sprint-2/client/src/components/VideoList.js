@@ -6,7 +6,7 @@ function VideoList(props) {
 // Only display thumbs of videos with !active state
  const  nextVideos = props.videos.filter(video => !video.active)
     .map(video =>{
-          console.log(video.id)
+          //console.log(video.id)
         return (   
                         
                  <VideoThumb
