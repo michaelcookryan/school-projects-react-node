@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function VideoThumb(props) {
 
         return (
-            
-            <li key={props.id} className="video-thumb">
-
+        <Link to={props.id}>
+           <li key={props.id} className="video-thumb">
+                
                     <img className="video-thumb__image" src={props.image} alt="" />
                     
                     <div className="video-thumb__copy">
@@ -16,9 +17,9 @@ function VideoThumb(props) {
                             {props.channelAuthor}
                         </h4>
                     </div>
-                
+                  
             </li> 
-            
+        </Link > 
         )
     }
 

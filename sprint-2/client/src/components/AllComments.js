@@ -16,7 +16,10 @@ function AllComments(props){
 
                 </div>
 
-                <CommentsList comments={props.comments}/>
+                <CommentsList 
+                    comments={props.comments} 
+                    makeDateReadable={props.makeDateReadable}
+                />
 
             </div>
         )
@@ -64,7 +67,7 @@ function NewComments(props) {
 function CommentsList(props) {
 
     const commentList = props.comments.map(comment => {
-console.log(comment.timestamp)
+
         return <li key={comment.timestamp} className="comments__list--item">
                     
                     <div className="avitar">
@@ -74,7 +77,7 @@ console.log(comment.timestamp)
                     <div className="details">
                         <div className="details__header">
                             <h4 className="name">{comment.name}</h4>
-                    <h4 className="date">{()=>{ props.makeDateReadable(comment.date) } }</h4>
+                    <h4 className="date">{props.makeDateReadable(comment.timestamp)}</h4>
                     <h4 className="since-posted">{timeSincePosted(comment.timestamp)}</h4>
                         </div>
                         <h4 className="comment-copy">{comment.comment}</h4>

@@ -4,7 +4,7 @@ import Likes from "../assets/icons/SVG/Icon-likes.svg"
 import AllComments from './AllComments';
 
 function About(props){
- 
+    
    // addComment = comment => {
         
         // let addedToList = this.state.mainVideo.comments
@@ -13,30 +13,25 @@ function About(props){
         //         comments: addedToList
         //     })
     //}
-  
-    //render(){
-    // function makeDateReadable(epochTime) {
 
-    //     let date = new Date(epochTime)
-    //     let readable = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
-    //     return readable
-    // }
+   // render(){
+    
     return (
         <div className="about">
             
             <div className="about__header">
-                <h1 className="about__title">{props.mainVideo.title}</h1>
+                <h1 className="about__title">{props.currentVideo.title}</h1>
                 <div className="about__subtitle">
                     <div className="about__subtitle--left">
-                        <h4 className="channel">{props.mainVideo.channel}</h4>
-                        <h4 className="date">{props.makeDateReadable(props.mainVideo.timestamp)}</h4>
+                        <h4 className="channel">{props.currentVideo.channel}</h4>
+                        <h4 className="date">{props.makeDateReadable(props.currentVideo.timestamp)}</h4>
                     </div>
                     <div className="about__subtitle--right">
                         <div className="views">
-                            <img src={Views} alt="views-icon" /><span>{props.mainVideo.views}</span>
+                            <img src={Views} alt="views-icon" /><span>{props.currentVideo.views}</span>
                         </div>
                         <div className="likes">
-                            <img src={Likes} alt="likes-icon" /><span>{props.mainVideo.likes}</span>
+                            <img src={Likes} alt="likes-icon" /><span>{props.currentVideo.likes}</span>
                         </div>
                     </div>
                 </div>
@@ -44,15 +39,18 @@ function About(props){
 
             <div className="about__body">
                 <h4 className="about__body--copy">
-                    {props.mainVideo.description}
+                    {props.currentVideo.description}
                 </h4>
             </div>
 
             {/* <AllComments comments={props.mainVideo.comments} addComment={addComment()} /> */}
-            <AllComments comments={props.comments} makeDateReadable={props.makeDateReadable}/>
+            <AllComments 
+                comments={props.comments} 
+                makeDateReadable={props.makeDateReadable}
+            />
         </div>
     )
-   // }
+  // }
    
 }
 
