@@ -28,14 +28,16 @@ class App extends React.Component {
   componentDidMount() {
     axios.get(api_url + my_key)
       .then(response => {
+       
         this.setState({
           videos: response.data.slice(1),
-          currentVideo: response.data[0].id
+          currentVideo: response.data[6].id
 
         }, () => {
+            
           axios.get(api_url + `/${this.state.currentVideo}` + my_key)
             .then(response => {
-              console.log(response.data.video)
+             
               this.setState({
                 nowPlaying: `${response.data.video}` + my_key,
                 currentVideoInfo: response.data,
@@ -46,25 +48,39 @@ class App extends React.Component {
 
         )
       })
-
+    
   }
 
-
+ 
 
   render(){
-  
+
     return (
       <div className="App">
         <Header />
 
         <Switch>
-          {/* <Route path="/" exact component={Home} /> */}
+        
           <Route path="/" exact render={()=>{
             return <Home 
-                    videoInfo={this.state} 
+                    nowPlaying={this.state.nowPlaying}
+                    currentVideo={this.state.currentVideo}
+                    currentVideoInfo={this.state.currentVideoInfo}
+                    comments={this.state.comments}
                     makeDateReadable={this.makeDateReadable}
+                    videos={this.state.videos}
                     />
-            }}/>
+          }} />
+          <Route path="/videos/:id" exact render={() => {
+            return <Home
+              nowPlaying={this.state.nowPlaying}
+              currentVideo={this.state.currentVideo}
+              currentVideoInfo={this.state.currentVideoInfo}
+              comments={this.state.comments}
+              makeDateReadable={this.makeDateReadable}
+              videos={this.state.videos}
+            />
+          }} />
           <Route path="/upload-video" component={Upload} />
         </Switch>
 

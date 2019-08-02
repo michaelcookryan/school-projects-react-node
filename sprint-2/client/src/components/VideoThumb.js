@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 function VideoThumb(props) {
 
         return (
-        <Link to={props.id}>
+            <Link to={`/videos/${props.id}`}>
            <li key={props.id} className="video-thumb">
                 
                     <img className="video-thumb__image" src={props.image} alt="" />
