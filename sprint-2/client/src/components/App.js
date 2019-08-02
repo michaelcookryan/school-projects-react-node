@@ -50,7 +50,7 @@ class App extends React.Component {
       })
     
   }
-
+  
  
 
   render(){
@@ -71,7 +71,8 @@ class App extends React.Component {
                     videos={this.state.videos}
                     />
           }} />
-          <Route path="/videos/:id" exact render={() => {
+          <Route path="/videos/:id" exact render={(props) => {
+            console.log("this is from the route; ",props.match.params.id)
             return <Home
               nowPlaying={this.state.nowPlaying}
               currentVideo={this.state.currentVideo}
