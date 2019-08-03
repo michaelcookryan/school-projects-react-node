@@ -5,9 +5,10 @@ import React from 'react'
 // import Volume from "../assets/icons/SVG/Icon-volume.svg"
 
 export default function Hero(props){
+    console.log(props)
     return (
         <div className="hero-section">
-            <video className="video" src={props.nowPlaying} controls ></video>
+            <video className="video" src={props.nowPlaying} poster={props.poster}controls ></video>
             {/* <video className="video" poster={Video}></video> */}
             
             {/* <div className="control">
