@@ -12,8 +12,10 @@ class Home extends Component{
         videos: [],
         comments: [],
         currentVideoInfo: {},
-        nowPlaying: ''
+        nowPlaying: '',
+        defaultVideo:''
     }
+
 
     makeDateReadable = (epochTime) => {
 
@@ -21,19 +23,18 @@ class Home extends Component{
         return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
 
     }
+
+    addComment = comment => {
+
+        let addedToList = this.state.comments
+        addedToList.concat(comment)
+            this.setState({
+                comments: addedToList
+            })
+    }
+    
     componentDidMount() {
-        // if (localStorage.lastVideo) {
-        //     console.log("loaded from storage: ", localStorage.lastVideo)
-             
-        //     this.setState({
-        //         currentVideoInfo: JSON.parse(localStorage.lastVideo),
-        //         comments: JSON.parse(localStorage.lastVideo.comments)        
-                
-        //     }, () => {
-        //         console.log("called from localstorage: ", this.state.currentVideoInfo)
-        //     })
-          
-        // } else {
+        
             axios.get(api_url + my_key)
                 .then(response => {
 
@@ -45,27 +46,39 @@ class Home extends Component{
 
                         axios.get(api_url + `/${this.state.defaultVideo}` + my_key)
                             .then(response => {
-
+                                
                                 this.setState({
                                     nowPlaying: `${response.data.video}` + my_key,
                                     currentVideoInfo: response.data,
                                     comments: response.data.comments
                                  
                                 })
-                            })
+                                 
+                                localStorage.defaultInfo = JSON.stringify(this.state.defaultVideo)
+
+                            }).catch(err => console.log(err));
+                            
                         }
-                        
+                                              
                     )
-                })
-       // }
-       
+
+                }).catch(err => console.log(err));
+
     }
 
     componentDidUpdate(prevProps) {
-    
-            if (this.props.match.params.id !== prevProps.match.params.id && this.props.match.params.id !== undefined) {
-            
-                axios.get(api_url + `/${this.props.match.params.id}` + my_key)
+        
+        if (this.props.match.params.id !== prevProps.match.params.id) {
+                
+            let searchCriteria = ''
+
+                if (this.props.match.params.id === undefined) {
+                    searchCriteria = JSON.parse(localStorage.defaultInfo)
+                } else { 
+                    searchCriteria = this.props.match.params.id
+                }
+
+                axios.get(api_url + `/${searchCriteria}` + my_key)
                     .then(response => {
 
                         this.setState({
@@ -73,16 +86,12 @@ class Home extends Component{
                             currentVideoInfo: response.data,
                             comments: response.data.comments
 
-                        })
-                    })
-                // localStorage.lastVideo = JSON.stringify(this.state.currentVideoInfo)
-                // localStorage.lastComments = JSON.stringify(this.state.comments)
-                // console.log("made into localstorage ", this.state.currentVideoInfo)
-            
-            } else {
-                return
-            }
-        
+                        }) 
+
+                    }).catch(err => console.log(err));             
+ 
+            }      
+   
     }
     
     render() {
@@ -99,6 +108,7 @@ class Home extends Component{
                         currentVideoInfo={this.state.currentVideoInfo}
                         comments={this.state.comments} 
                         makeDateReadable={this.makeDateReadable}
+                        addComment={this.addComment}
                     />
 
                     <VideoList 

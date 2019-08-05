@@ -1,7 +1,10 @@
 import React from 'react'
 import Avitar from "../assets/images/Mohan-muruge.jpg";
+import axios from 'axios';
+const api_url = 'https://project-2-api.herokuapp.com/videos';
+const my_key = '?api_key=4f6764a2-4a25-45a8-90b7-d7e52c6890f8'; 
 
-function AllComments({comments,makeDateReadable}){
+function AllComments({currentVideo, comments,makeDateReadable, addComment}){
 
         return (
             <div className="comments">
@@ -12,7 +15,11 @@ function AllComments({comments,makeDateReadable}){
                         <img src={Avitar} alt="avitar"/>
                     </div>
 
-                    {/* <NewComments addComment={props.addComment}/> */}
+                    <NewComments
+                       // addComment={props.addComment}
+                        currentVideo={currentVideo}
+                        addComment={addComment}
+                    />
 
                 </div>
 
@@ -28,23 +35,26 @@ function AllComments({comments,makeDateReadable}){
 
 
 //Provides form for new comment and adds to list of comments
-function NewComments(props) {
+function NewComments({currentVideo, addComment}) {
 
+    
     const handleSubmit = event => {
         event.preventDefault()
 
-        let date = new Date();
-        let readable = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
-        let timestamp = Date.now(); 
-
         let newComment = {
             name: "Annonymous",
-            date: readable,
-            timestamp:timestamp,
-            commentCopy: event.target.commentCopy.value
+            comment: event.target.commentCopy.value
         }
 
-        props.addComment(newComment)
+        let type = { 'content-type': 'application/json' }
+
+        axios.post(api_url + `/${currentVideo.id}/comments` + my_key, newComment, type)
+            .then(() => {
+
+                addComment(newComment)
+
+            }).catch(err => console.log(err));
+        
 
         event.target.reset()
 
@@ -65,8 +75,12 @@ function NewComments(props) {
 
 // Takes current comment list and provides output for display
 function CommentsList({ comments, makeDateReadable }) {
+   
+    let ascendingList = comments.sort((commentOne, commentTwo) => {
+        return commentTwo.timestamp - commentOne.timestamp
+    })
 
-    const commentList = comments.map(comment => {
+    const commentList = ascendingList.map(comment => {
 
         return <li key={comment.timestamp} className="comments__list--item">
                     

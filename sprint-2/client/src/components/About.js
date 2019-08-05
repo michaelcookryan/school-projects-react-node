@@ -3,7 +3,7 @@ import Views from "../assets/icons/SVG/Icon-views.svg"
 import Likes from "../assets/icons/SVG/Icon-likes.svg"
 import AllComments from './AllComments';
 
-function About({currentVideoInfo, comments, makeDateReadable}){
+function About({currentVideoInfo, makeDateReadable, ...rest}){
 
    // addComment = comment => {
         
@@ -46,9 +46,11 @@ function About({currentVideoInfo, comments, makeDateReadable}){
             </div>
 
             {/* <AllComments comments={props.mainVideo.comments} addComment={addComment()} /> */}
-            <AllComments 
-                comments={comments} 
+            <AllComments
+                currentVideo={currentVideoInfo}    
+                comments={rest.comments} 
                 makeDateReadable={makeDateReadable}
+                addComment={rest.addComment}
             />
         </div>
     )
