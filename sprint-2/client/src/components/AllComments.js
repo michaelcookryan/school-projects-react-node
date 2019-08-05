@@ -1,11 +1,11 @@
 import React from 'react'
 import Avitar from "../assets/images/Mohan-muruge.jpg";
 
-function AllComments(props){
+function AllComments({comments,makeDateReadable}){
 
         return (
             <div className="comments">
-                <h4 className="comments__counter">{props.comments.length} Comments</h4>
+                <h4 className="comments__counter">{comments.length} Comments</h4>
                 <div className="comments-wrapper__form-wrap">
                        
                     <div className="comments-wrapper__image">
@@ -17,8 +17,8 @@ function AllComments(props){
                 </div>
 
                 <CommentsList 
-                    comments={props.comments} 
-                    makeDateReadable={props.makeDateReadable}
+                    comments={comments} 
+                    makeDateReadable={makeDateReadable}
                 />
 
             </div>
@@ -64,9 +64,9 @@ function NewComments(props) {
 
 
 // Takes current comment list and provides output for display
-function CommentsList(props) {
+function CommentsList({ comments, makeDateReadable }) {
 
-    const commentList = props.comments.map(comment => {
+    const commentList = comments.map(comment => {
 
         return <li key={comment.timestamp} className="comments__list--item">
                     
@@ -77,7 +77,7 @@ function CommentsList(props) {
                     <div className="details">
                         <div className="details__header">
                             <h4 className="name">{comment.name}</h4>
-                    <h4 className="date">{props.makeDateReadable(comment.timestamp)}</h4>
+                    <h4 className="date">{makeDateReadable(comment.timestamp)}</h4>
                     <h4 className="since-posted">{timeSincePosted(comment.timestamp)}</h4>
                         </div>
                         <h4 className="comment-copy">{comment.comment}</h4>
@@ -90,7 +90,7 @@ function CommentsList(props) {
 }
 
 
-// For Diving Deeper - time since posted calculation 
+
 function timeSincePosted(timePosted) {
 
     let current = new Date()

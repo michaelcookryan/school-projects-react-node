@@ -1,13 +1,13 @@
 import React from 'react'
 import VideoThumb from "./VideoThumb"
 
-function VideoList(props) {
+function VideoList({videos, currentVideoId}) {
 
-// Only display thumbs of videos with !active state
+// Only display thumbs of videos that are not currently selected/playing
 
- const  nextVideos = props.videos.filter(video => !video.active)
+    const nextVideos = videos.filter(video => currentVideoId !== video.id)
     .map(video =>{
-         // console.log(video.id)
+
         return (   
                         
                  <VideoThumb
