@@ -42,7 +42,7 @@ function About({currentVideoInfo, makeDateReadable, ...rest}){
             />
         </div>
     )
-  // }
+
    
 }
 

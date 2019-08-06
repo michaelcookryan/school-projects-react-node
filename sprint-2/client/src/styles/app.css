@@ -15,8 +15,11 @@
   src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
 }
 
+header {
+  border-bottom: 1px solid #E1E1E1;
+}
+
 .header-section {
-  height: 169px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,6 +33,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: .7rem;
 }
 
 .header-section__logo {
@@ -616,9 +620,140 @@
   }
 }
 
-/* follow block is for testing to prevent jump in header - REMOVE UPON COMPLETION OF PROJECT OR SOONER*/
-main section h1 {
-  height: 80vh;
+.upload {
+  width: 100%;
+}
+
+.upload section {
+  width: 100%;
+  border-top: 1px solid #E1E1E1;
+}
+
+.upload h5 {
+  margin: 2rem 0 .2rem;
+}
+
+.upload__title {
+  margin: 1.5rem 0 0;
+}
+
+.upload__thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.upload__form {
+  width: 100%;
+}
+
+.upload__form .description-heading {
+  margin-top: 0;
+}
+
+.upload__form textarea {
+  height: 10.44rem;
+  margin-bottom: 0;
+}
+
+.upload__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2rem;
+}
+
+.upload__buttons .publish-btn {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.upload__buttons .clear-btn {
+  margin: 0 0 2rem 0;
+  color: #0095FF;
+}
+
+@media screen and (min-width: 768px) {
+  .upload {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .upload h5 {
+    margin-top: 2.5rem;
+  }
+  .upload__title {
+    margin: 3rem 0 2rem;
+  }
+  .upload__thumbnail {
+    max-width: 344px;
+    max-height: 183px;
+  }
+  .upload__form textarea {
+    margin-bottom: 2.5rem;
+  }
+  .upload__buttons {
+    border-top: 1px solid #E1E1E1;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 2.5rem;
+    width: 100%;
+  }
+  .upload__buttons .publish-btn {
+    max-width: 160px;
+    margin: 0;
+  }
+  .upload__buttons .clear-btn {
+    margin: 0 3rem 0 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .upload section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .upload__form {
+    width: calc(100% - 368px);
+  }
+  .upload__form textarea {
+    height: 6rem;
+  }
 }
 
 html {
@@ -715,10 +850,14 @@ button {
   transition: all .2s ease-in-out;
 }
 
-button:active, button:hover, button:visited {
+button:hover {
   background: #0065AD;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+}
+
+button:active, button:visited, button:focus {
+  background: #0095FF;
 }
 
 button:focus {

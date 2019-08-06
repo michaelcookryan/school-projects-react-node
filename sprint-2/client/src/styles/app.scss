@@ -86,11 +86,15 @@ button{
     float:right;
     transition: all .2s ease-in-out;
     
-    &:active,
-    &:hover,
-    &:visited{
+    &:hover
+   {
         background:$primary-cta-hover;
         transition: all .2s ease-in-out;
+    }
+    &:active,
+    &:visited,
+    &:focus{
+        background:$primary-cta-text-link;
     }
 
     &:focus{
