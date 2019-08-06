@@ -568,6 +568,10 @@ header {
   padding: 0;
 }
 
+.next-videos .video-list a {
+  text-decoration: none;
+}
+
 .next-videos .video-list .video-thumb {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -593,10 +597,13 @@ header {
   margin: 0 0 0 1em;
   width: 50%;
   max-width: 208px;
+  color: #323232;
 }
 
 .next-videos .video-list .video-thumb__copy--title {
   font-family: "AvenirNextLTPro-Demi";
+  color: #323232;
+  line-height: 1.15rem;
   margin: 0 0 .2rem 0;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -611,6 +618,7 @@ header {
   .next-videos .video-list .video-thumb__copy--title {
     white-space: normal;
     overflow: initial;
+    line-height: 1.25rem;
   }
 }
 
