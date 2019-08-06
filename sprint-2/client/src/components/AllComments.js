@@ -4,7 +4,7 @@ import axios from 'axios';
 const api_url = 'https://project-2-api.herokuapp.com/videos';
 const my_key = '?api_key=4f6764a2-4a25-45a8-90b7-d7e52c6890f8'; 
 
-function AllComments({currentVideo, comments,makeDateReadable, addComment}){
+function AllComments({currentVideoId, comments, makeDateReadable, addComment}){
 
         return (
             <div className="comments">
@@ -16,8 +16,7 @@ function AllComments({currentVideo, comments,makeDateReadable, addComment}){
                     </div>
 
                     <NewComments
-                       // addComment={props.addComment}
-                        currentVideo={currentVideo}
+                        currentVideoId={currentVideoId}
                         addComment={addComment}
                     />
 
@@ -34,10 +33,9 @@ function AllComments({currentVideo, comments,makeDateReadable, addComment}){
 
 
 
-//Provides form for new comment and adds to list of comments
-function NewComments({currentVideo, addComment}) {
+// Add new comment to current video comment list
+function NewComments({currentVideoId, addComment}) {
 
-    
     const handleSubmit = event => {
         event.preventDefault()
 
@@ -48,16 +46,16 @@ function NewComments({currentVideo, addComment}) {
 
         let type = { 'content-type': 'application/json' }
 
-        axios.post(api_url + `/${currentVideo.id}/comments` + my_key, newComment, type)
-            .then(() => {
+        axios.post(api_url + `/${currentVideoId}/comments` + my_key, newComment, type)
+            .then(response => {
 
-                addComment(newComment)
+                addComment(response.data, currentVideoId) 
 
             }).catch(err => console.log(err));
         
 
         event.target.reset()
-
+     
     }
 
     return (
@@ -73,16 +71,16 @@ function NewComments({currentVideo, addComment}) {
 
 
 
-// Takes current comment list and provides output for display
+// Takes current comment list and provides output for display with newest first
 function CommentsList({ comments, makeDateReadable }) {
-   
+
     let ascendingList = comments.sort((commentOne, commentTwo) => {
         return commentTwo.timestamp - commentOne.timestamp
     })
 
     const commentList = ascendingList.map(comment => {
 
-        return <li key={comment.timestamp} className="comments__list--item">
+        return <li key={comment.id} className="comments__list--item">
                     
                     <div className="avitar">
                         <img src={Avitar} alt="avitar" />

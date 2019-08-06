@@ -24,13 +24,22 @@ class Home extends Component{
 
     }
 
-    addComment = comment => {
+    addComment = (comment, id) => {
 
         let addedToList = this.state.comments
-        addedToList.concat(comment)
-            this.setState({
-                comments: addedToList
-            })
+        let newList = addedToList.concat(comment)
+       
+        axios.get(api_url + `/${id}` + my_key)
+            .then(() => {
+                
+                this.setState({
+                    comments: newList
+                       
+                })
+                
+           }).catch(err => console.log(err));
+        
+       
     }
     
     componentDidMount() {
@@ -106,6 +115,7 @@ class Home extends Component{
                 <main>
                     <About                      
                         currentVideoInfo={this.state.currentVideoInfo}
+                        currentVideoId={this.state.currentVideoInfo.id}
                         comments={this.state.comments} 
                         makeDateReadable={this.makeDateReadable}
                         addComment={this.addComment}

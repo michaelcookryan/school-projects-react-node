@@ -4,17 +4,6 @@ import Likes from "../assets/icons/SVG/Icon-likes.svg"
 import AllComments from './AllComments';
 
 function About({currentVideoInfo, makeDateReadable, ...rest}){
-
-   // addComment = comment => {
-        
-        // let addedToList = this.state.mainVideo.comments
-        // addedToList.unshift(comment)
-        //     this.setState({
-        //         comments: addedToList
-        //     })
-    //}
-
-   // render(){
     
     return (
         <div className="about">
@@ -45,9 +34,8 @@ function About({currentVideoInfo, makeDateReadable, ...rest}){
                 </h4>
             </div>
 
-            {/* <AllComments comments={props.mainVideo.comments} addComment={addComment()} /> */}
             <AllComments
-                currentVideo={currentVideoInfo}    
+                currentVideoId={rest.currentVideoId}
                 comments={rest.comments} 
                 makeDateReadable={makeDateReadable}
                 addComment={rest.addComment}
