@@ -1,0 +1,94 @@
+// Header Styles
+header{
+    border-bottom: 1px solid $divider;
+}
+
+.header-section{
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: .7rem;
+
+    &__logo{
+        padding: .6em 0;
+    }
+    &__right{
+        width: 100%;
+        padding: 0 1em;
+    }
+    &__search{
+
+        input{
+            padding:1.22em;
+            margin:0 0 .6em 0;
+        }
+      
+        input::placeholder {
+                background: url('../assets/icons/SVG/Icon-search.svg') no-repeat left top;
+                background-size:contain;
+                text-indent:1.5rem;
+            }
+       
+    }
+    button{
+            float:none;
+            width:calc(100% - 58px);
+
+            .btn__icon{
+                vertical-align: top;
+                margin-right:.3rem;
+            }
+        }
+    &__avitar{
+        width: 42px;
+        height:42px;
+        border-radius: 25px;
+        overflow: hidden;
+        margin-left:1rem;
+        float:right;
+
+        img{
+            width:auto;
+            height:100%;
+        }
+
+    }
+}
+
+
+
+@media screen and (min-width:768px){
+.header-section{
+    flex-direction:row;
+    justify-content: space-between;
+    height:80px;
+
+    &__right{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center; 
+        padding:0;
+    }
+    &__search{
+
+        input{
+            width:288px;
+            margin:0;
+        }
+
+    }
+    button{
+            width: auto;
+            margin-left:1.5rem;
+        }
+    &__avitar{
+        float:none;
+        margin-left:1.5rem;
+
+    }
+ }
+}
+
+
+

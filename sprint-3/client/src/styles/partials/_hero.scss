@@ -1,0 +1,96 @@
+// Hero Styles
+
+.hero-section{
+    background:#000;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .video{
+        width:100%;
+        margin:0 auto;
+    }
+    .control__icons{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        background:rgba(0,0,0,.6); 
+        height:40px;
+        border-radius: 4px;
+    }
+    .control{
+            position: absolute;
+            display:flex;
+            justify-content: space-evenly;
+            align-items:center;
+            bottom:0;
+            width:90%;
+            margin:0 auto 1rem;;
+
+            &__play{
+                margin-right:.5rem;
+                width:80px;
+            }
+
+            &__scrubber{
+                width:100%;
+                max-width:519px;
+
+                /* following hr and span are for sprint-1 only */
+                hr{
+                    width: 90%;
+                    height: 6px;
+                    border: none;
+                    background: #000;
+                }
+                span{
+                    display: none
+                }
+            }
+           
+            &__screen-vol{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width:100px;
+                margin-left:.5rem;
+            }
+        }
+}
+@media screen and (min-width:768px){
+.hero-section{
+    .video{
+       max-width:700px;
+    }
+     .control{
+        max-width:684px;
+
+        &__scrubber{
+            max-width:751px;
+            hr{
+                 margin:0 0 0 1em;
+            }
+            span{
+                display: inline-block;
+                color:#fff;
+                font-size:.4rem;
+                font-weight:100;
+                margin:0 2em;
+            }
+        }
+    }
+}
+   
+}
+
+@media screen and (min-width:1440px){
+  .hero-section{
+        .video{
+            max-width:944px;
+        }
+        .control{
+            max-width:912px;
+        }
+    }  
+}
