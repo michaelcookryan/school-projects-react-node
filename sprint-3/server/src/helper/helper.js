@@ -12,7 +12,4 @@ function readJSONFile(filename) {
     return JSON.parse(fs.readFileSync(filename, "utf8"));
 }
 
-module.exports = {
-    writeJSONFile,
-    readJSONFile
-};
+module.exports = {writeJSONFile, readJSONFile};

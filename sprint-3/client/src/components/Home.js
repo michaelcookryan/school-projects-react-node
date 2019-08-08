@@ -44,7 +44,8 @@ class Home extends Component{
     
     componentDidMount() {
         
-            axios.get(api_url + my_key)
+            // axios.get(api_url + my_key)
+        axios.get("http://localhost:8080/videos")
                 .then(response => {
 
                     this.setState({
@@ -54,6 +55,7 @@ class Home extends Component{
                     }, () => {
 
                         axios.get(api_url + `/${this.state.defaultVideo}` + my_key)
+                            // axios.get(`http://localhost:8080/videos/${this.state.defaultVideo}`)
                             .then(response => {
                                 
                                 this.setState({
