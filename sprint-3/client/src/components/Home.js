@@ -3,8 +3,9 @@ import Hero from './Hero';
 import VideoList from './VideoList';
 import About from './About';
 import axios from 'axios';
-const api_url = 'https://project-2-api.herokuapp.com/videos';
-const my_key = '?api_key=4f6764a2-4a25-45a8-90b7-d7e52c6890f8'; 
+//const api_url = 'https://project-2-api.herokuapp.com/videos';
+//const my_key = '?api_key=4f6764a2-4a25-45a8-90b7-d7e52c6890f8'; 
+const api_url ='http://localhost:8080/videos';
 
 class Home extends Component{
 
@@ -29,7 +30,8 @@ class Home extends Component{
         let addedToList = this.state.comments
         let newList = addedToList.concat(comment)
        
-        axios.get(api_url + `/${id}` + my_key)
+        // axios.get(api_url + `/${id}` + my_key)
+        axios.get(api_url + `/${id}`)
             .then(() => {
                 
                 this.setState({
@@ -45,7 +47,7 @@ class Home extends Component{
     componentDidMount() {
         
             // axios.get(api_url + my_key)
-        axios.get("http://localhost:8080/videos")
+        axios.get(api_url)
                 .then(response => {
 
                     this.setState({
@@ -54,19 +56,20 @@ class Home extends Component{
 
                     }, () => {
 
-                        axios.get(api_url + `/${this.state.defaultVideo}` + my_key)
-                            // axios.get(`http://localhost:8080/videos/${this.state.defaultVideo}`)
+                        //axios.get(api_url + `/${this.state.defaultVideo}` + my_key)
+                            axios.get(api_url + `/${this.state.defaultVideo}`)
                             .then(response => {
-                                
+                                console.log("comments: ", this.state.defaultVideo)
                                 this.setState({
-                                    nowPlaying: `${response.data.video}` + my_key,
+                                    // nowPlaying: `${response.data.video}` + my_key,
+                                    nowPlaying: response.data.video,
                                     currentVideoInfo: response.data,
                                     comments: response.data.comments
                                  
                                 })
                                  
                                 localStorage.defaultInfo = JSON.stringify(this.state.defaultVideo)
-
+                                
                             }).catch(err => console.log(err));
                             
                         }
@@ -89,11 +92,13 @@ class Home extends Component{
                     searchCriteria = this.props.match.params.id
                 }
 
-                axios.get(api_url + `/${searchCriteria}` + my_key)
+                // axios.get(api_url + `/${searchCriteria}` + my_key)
+            axios.get(`http://localhost:8080/videos/${searchCriteria}`)
                     .then(response => {
 
                         this.setState({
-                            nowPlaying: `${response.data.video}` + my_key,
+                            // nowPlaying: `${response.data.video}` + my_key,
+                            nowPlaying: response.data.video,
                             currentVideoInfo: response.data,
                             comments: response.data.comments
 

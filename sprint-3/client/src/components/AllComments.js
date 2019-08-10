@@ -1,8 +1,9 @@
 import React from 'react'
 import Avitar from "../assets/images/Mohan-muruge.jpg";
 import axios from 'axios';
-const api_url = 'https://project-2-api.herokuapp.com/videos';
-const my_key = '?api_key=4f6764a2-4a25-45a8-90b7-d7e52c6890f8'; 
+// const api_url = 'https://project-2-api.herokuapp.com/videos';
+// const my_key = '?api_key=4f6764a2-4a25-45a8-90b7-d7e52c6890f8'; 
+const api_url = 'http://localhost:8080/videos/';
 
 function AllComments({currentVideoId, comments, makeDateReadable, addComment}){
 
@@ -46,7 +47,8 @@ function NewComments({currentVideoId, addComment}) {
 
         let type = { 'content-type': 'application/json' }
 
-        axios.post(api_url + `/${currentVideoId}/comments` + my_key, newComment, type)
+        // axios.post(api_url + `/${currentVideoId}/comments` + my_key, newComment, type)
+        axios.post(api_url + `/${currentVideoId}/comments`, newComment, type)
             .then(response => {
 
                 addComment(response.data, currentVideoId) 
