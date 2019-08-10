@@ -12,11 +12,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/:id", (req, res) => {
-    let id = req.params.id
-    console.log(typeof videoDetails)
-    console.log("id: ", id)
-    const detailsData = videoDetails.find(video => video.id === req.params.id)
-    console.log("detailsData: ", detailsData)
-    return res.send(detailsData)
+    const details = videoDetails.find(video => video.id === req.params.id)
+    return res.send(details)
 })
 module.exports = router;
