@@ -4,7 +4,7 @@ import Likes from "../assets/icons/SVG/Icon-likes.svg"
 import AllComments from './AllComments';
 
 function About({ currentVideoInfo, currentVideoId, makeDateReadable, comments, addComment}){
-    console.log("about: ", comments)
+    
     return (
         <div className="about">
             

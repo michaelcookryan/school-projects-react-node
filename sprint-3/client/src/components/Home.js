@@ -3,8 +3,7 @@ import Hero from './Hero';
 import VideoList from './VideoList';
 import About from './About';
 import axios from 'axios';
-const api_url_org = 'https://project-2-api.herokuapp.com/videos';
-const my_key = '?api_key=4f6764a2-4a25-45a8-90b7-d7e52c6890f8'; 
+
 const api_url ='http://localhost:8080/videos';
 
 class Home extends Component{
@@ -49,7 +48,7 @@ class Home extends Component{
             // axios.get(api_url + my_key)
         axios.get(api_url)
                 .then(response => {
-                    console.log("first get: ", response)
+                    
                     this.setState({
                         videos: response.data,
                         defaultVideo: response.data[0].id
@@ -57,9 +56,8 @@ class Home extends Component{
                     }, () => {
 
                 //axios.get(api_url_org + `/${this.state.defaultVideo}` + my_key)
-                            axios.get(`http://localhost:8080/videos/${this.state.defaultVideo}`).then(response => {
-                                console.log("videos: ", this.state.videos)
-                                console.log("deafultVideo: ", response)
+                            axios.get(api_url + `/${this.state.defaultVideo}`).then(response => {
+
                                 this.setState({
                                     // nowPlaying: `${response.data.video}` + my_key,
                                     nowPlaying: response.data.video,
@@ -83,20 +81,19 @@ class Home extends Component{
     componentDidUpdate(prevProps) {
         
         if (this.props.match.params.id !== prevProps.match.params.id) {
-                console.log("props: ",this.props.match.params.id)
+                
             let searchCriteria = ''
 
                 if (this.props.match.params.id === undefined) {
                     searchCriteria = JSON.parse(localStorage.defaultInfo)
                 } else { 
-                    searchCriteria = this.props.match.params.id
-                    //console.log("search criteria: ", searchCriteria)
+                    searchCriteria = this.props.match.params.id                  
                 }
 
                 //axios.get(api_url + `/${searchCriteria}` + my_key)
-            axios.get(`http://localhost:8080/videos/${searchCriteria}`)
+            axios.get(api_url + `/${searchCriteria}`)
                 .then(response => {
-                        console.log("search criteria: ", searchCriteria)
+                        
                         this.setState({
                             // nowPlaying: `${response.data.video}` + my_key,
                             nowPlaying: response.data.video,
@@ -112,7 +109,7 @@ class Home extends Component{
     }
     
     render() {
-        console.log("home: ", this.state.comments)
+      
         return (
             <div>
                 <Hero
