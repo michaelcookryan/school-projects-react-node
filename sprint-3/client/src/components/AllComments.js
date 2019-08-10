@@ -6,7 +6,7 @@ import axios from 'axios';
 const api_url = 'http://localhost:8080/videos/';
 
 function AllComments({currentVideoId, comments, makeDateReadable, addComment}){
-
+console.log("all comments: ",comments)
         return (
             <div className="comments">
                 <h4 className="comments__counter">{comments.length} Comments</h4>

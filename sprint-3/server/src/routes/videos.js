@@ -7,12 +7,16 @@ const videoDetailsJsonFile = `${__dirname}/../model/videoDetails.json`;
 const videoDetails = helper.readJSONFile(videoDetailsJsonFile);
 
 
-router.get("/", (req,res) => {
-    return res.send(videos)
+router.get("/", (req, res) => {
+    return res.send(Object.values(videos))
 })
 
 router.get("/:id", (req, res) => {
-    console.log(videoDetails[req.params.id])
-    return res.send(videoDetails[req.params.id])
+    let id = req.params.id
+    console.log(typeof videoDetails)
+    console.log("id: ", id)
+    const detailsData = videoDetails.find(video => video.id === req.params.id)
+    console.log("detailsData: ", detailsData)
+    return res.send(detailsData)
 })
 module.exports = router;
