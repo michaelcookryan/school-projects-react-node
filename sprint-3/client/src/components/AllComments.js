@@ -5,6 +5,7 @@ import axios from 'axios';
 // const my_key = '?api_key=4f6764a2-4a25-45a8-90b7-d7e52c6890f8'; 
 const api_url = 'http://localhost:8080/videos/';
 
+
 function AllComments({currentVideoId, comments, makeDateReadable, addComment}){
 
         return (
@@ -39,18 +40,23 @@ function NewComments({currentVideoId, addComment}) {
 
     const handleSubmit = event => {
         event.preventDefault()
-
+        
+        let current = new Date()
         let newComment = {
-            name: "Annonymous",
-            comment: event.target.commentCopy.value
+            name: "BrainStation Man",
+            comment: event.target.commentCopy.value,
+            id: '',
+            timestamp: current.getTime()
         }
 
         let type = { 'content-type': 'application/json' }
 
         // axios.post(api_url + `/${currentVideoId}/comments` + my_key, newComment, type)
-        axios.post(api_url + `/${currentVideoId}/comments`, newComment, type)
+        axios.post(api_url + `${currentVideoId}/comments`, newComment, type)
             .then(response => {
 
+                console.log("did this post?: ", response.data)
+                
                 addComment(response.data, currentVideoId) 
 
             }).catch(err => console.log(err));

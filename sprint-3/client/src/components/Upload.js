@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import VideoThumb from "../assets/images/Upload-video-preview.jpg"
+
+
+
 export default class Upload extends Component {
+
+
     render() {
         return (
 
@@ -28,18 +33,26 @@ export default class Upload extends Component {
                                 <label>
                                     <h5 className="description-heading">Add a Video Description</h5>
                                 </label>
-                                <textarea className="upload__form--description" placeholder="Add a description of your video" name="descriptionCopy" required></textarea>
+                            <textarea className="upload__form--description" placeholder="Add a description of your video" name="descriptionCopy" required></textarea>
                             
+                            <div className="upload__buttons">
+                                <button className="publish-btn">Publish</button>
+                                {/* <label> */}
+                                    {/* <h5 className="clear-btn">Clear</h5> */}
+                                    <input className="clear-btn" type="reset" value="Clear"/>
+                                {/* </label> */}
+                            </div>
+
                         </form>
                         
                     </section>
 
-                        <div className="upload__buttons">
+                        {/* <div className="upload__buttons">
                             <button className="publish-btn">Publish</button>
                             <label>
                                 <h5 className="clear-btn">Clear</h5>
                             </label>
-                        </div>
+                        </div> */}
 
                     </div>                                       
                 </main>
