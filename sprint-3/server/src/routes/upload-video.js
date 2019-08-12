@@ -61,7 +61,7 @@ router.post("/", (req, res) => {
     videoDetails.push(nextVideoDetail)
 
     helper.writeJSONFile(videoDetailsJsonFile, videoDetails)
-    console.log("the new one: ", videos)
+
     return res.json(nextVideo)
 })
 module.exports = router;

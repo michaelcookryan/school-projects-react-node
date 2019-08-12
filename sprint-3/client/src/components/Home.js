@@ -89,7 +89,7 @@ class Home extends Component{
             axios.get(api_url + `/${searchCriteria}`)
                 .then(response => {
                         
-                        this.setState({
+                    this.setState({
                             nowPlaying: response.data.video,
                             currentVideoInfo: response.data,
                             comments: response.data.comments

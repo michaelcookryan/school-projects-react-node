@@ -17,16 +17,10 @@ function handleSubmit (event){
 
     let type = { 'content-type': 'application/json' }
 
-
-    console.log(event.target.title.value)
-    console.log(newVideo)
-    console.log(api_url)
-
     axios.post(api_url, newVideo, type)
         .then(response => {
 
-            console.log("my new video: ",response)
-            //addComment(response.data, currentVideoId)
+            console.log("new video to add: ",response.data)
 
         }).catch(err => console.log(err));
     
