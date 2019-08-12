@@ -29,7 +29,6 @@ class Home extends Component{
         let addedToList = this.state.comments
         let newList = addedToList.concat(comment)
        
-        // axios.get(api_url + `/${id}` + my_key)
         axios.get(api_url + `/${id}`)
             .then(() => {
                 
@@ -45,7 +44,6 @@ class Home extends Component{
     
     componentDidMount() {
         
-            // axios.get(api_url + my_key)
         axios.get(api_url)
                 .then(response => {
                     
@@ -55,11 +53,9 @@ class Home extends Component{
 
                     }, () => {
 
-                //axios.get(api_url_org + `/${this.state.defaultVideo}` + my_key)
                             axios.get(api_url + `/${this.state.defaultVideo}`).then(response => {
 
                                 this.setState({
-                                    // nowPlaying: `${response.data.video}` + my_key,
                                     nowPlaying: response.data.video,
                                     currentVideoInfo: response.data,
                                     comments: response.data.comments
@@ -90,12 +86,10 @@ class Home extends Component{
                     searchCriteria = this.props.match.params.id                  
                 }
 
-                //axios.get(api_url + `/${searchCriteria}` + my_key)
             axios.get(api_url + `/${searchCriteria}`)
                 .then(response => {
                         
                         this.setState({
-                            // nowPlaying: `${response.data.video}` + my_key,
                             nowPlaying: response.data.video,
                             currentVideoInfo: response.data,
                             comments: response.data.comments

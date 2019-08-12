@@ -264,6 +264,7 @@ header {
 
 .about__header h1 {
   margin: 0 0 1rem 0;
+  text-transform: capitalize;
 }
 
 .about__header .about__subtitle--left {
@@ -608,6 +609,7 @@ header {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  text-transform: capitalize;
 }
 
 .next-videos .video-list .video-thumb__copy--channel-author {

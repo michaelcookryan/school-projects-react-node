@@ -7,6 +7,8 @@ const videoDetailsJsonFile = `${__dirname}/../model/videoDetails.json`;
 const videoDetails = helper.readJSONFile(videoDetailsJsonFile);
 const uidGenerator = require('node-unique-id-generator');
 
+
+
 router.get("/", (req, res) => {
     return res.send(Object.values(videos))
 })
@@ -26,7 +28,7 @@ router.post("/:id/comments", (req, res) => {
         id: uidGenerator.generateGUID(),
         likes: 0,
         timestamp: req.body.timestamp
-        
+
     }
 
     details.comments.push(nextComment)

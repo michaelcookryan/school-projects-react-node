@@ -1,12 +1,41 @@
-import React, { Component } from 'react'
+import React from 'react'
+import axios from 'axios';
 import VideoThumb from "../assets/images/Upload-video-preview.jpg"
 
+const api_url = 'http://localhost:8080/upload-video'
+
+function handleSubmit (event){
+    event.preventDefault()
+
+    let newVideo = {
+        id: '',
+        title: event.target.title.value,
+        channel: "Michael",
+        description: event.target.descriptionCopy.value,
+        image: VideoThumb 
+    }
+
+    let type = { 'content-type': 'application/json' }
 
 
-export default class Upload extends Component {
+    console.log(event.target.title.value)
+    console.log(newVideo)
+    console.log(api_url)
 
+    axios.post(api_url, newVideo, type)
+        .then(response => {
 
-    render() {
+            console.log("my new video: ",response)
+            //addComment(response.data, currentVideoId)
+
+        }).catch(err => console.log(err));
+    
+    
+    event.target.reset()
+}
+
+export default function Upload () {
+
         return (
 
                 <main>
@@ -23,12 +52,12 @@ export default class Upload extends Component {
                         </div>
                     
                        
-                        <form className="upload__form">  
+                        <form className="upload__form" onSubmit={handleSubmit}>  
                             
                                 <label>
                                     <h5>Title Your Video</h5>
                                 </label>
-                                <input className="upload__form--title" type="text" placeholder="Add a title to your video" required/>
+                                <input className="upload__form--title" type="text" placeholder="Add a title to your video" name="title" required/>
                                 
                                 <label>
                                     <h5 className="description-heading">Add a Video Description</h5>
@@ -36,28 +65,18 @@ export default class Upload extends Component {
                             <textarea className="upload__form--description" placeholder="Add a description of your video" name="descriptionCopy" required></textarea>
                             
                             <div className="upload__buttons">
-                                <button className="publish-btn">Publish</button>
-                                {/* <label> */}
-                                    {/* <h5 className="clear-btn">Clear</h5> */}
-                                    <input className="clear-btn" type="reset" value="Clear"/>
-                                {/* </label> */}
+                                <button className="publish-btn" >Publish</button>
+                                <input className="clear-btn" type="reset" value="Clear" />
                             </div>
 
                         </form>
                         
                     </section>
 
-                        {/* <div className="upload__buttons">
-                            <button className="publish-btn">Publish</button>
-                            <label>
-                                <h5 className="clear-btn">Clear</h5>
-                            </label>
-                        </div> */}
-
                     </div>                                       
                 </main>
                
            
         )
-    }
+
 }
