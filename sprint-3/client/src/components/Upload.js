@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import VideoThumb from "../assets/images/Upload-video-preview.jpg"
 
-const api_url = 'http://localhost:8080/upload-video'
+const api_url = 'http://localhost:8080/videos'
 
 function handleSubmit (event){
     event.preventDefault()
