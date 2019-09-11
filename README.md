@@ -8,3 +8,4 @@ Sprint 2
 Sprint 3
 
 Each would require a npm install to run.
+(Sprint 3 requires npm install in both client and server directories)
